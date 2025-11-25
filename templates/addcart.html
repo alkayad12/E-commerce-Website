@@ -1,0 +1,129 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'index1.css' %} %}">
+    <title>Add to Cart</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            width: 300px;
+            margin: 50px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-info {
+            margin-bottom: 20px;
+        }
+
+        #add-to-cart {
+            width: 100%;
+            height: 40px;
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #add-to-cart:hover {
+            background-color: #3e8e41;
+        }
+
+        .cart-info {
+            margin-top: 20px;
+        }
+
+        #cart-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        #total-price {
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Add to Cart</h1>
+        <div class="product-info">
+            <h2>Product Name</h2>
+            <p>Product Description</p>
+            <p>Price: $100</p>
+            <button id="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="cart-info">
+            <h2>Cart</h2>
+            <ul id="cart-list"></ul>
+            <p id="total-price"></p>
+        </div>
+    </div>
+
+    <script>
+        const addToCartButton = document.getElementById('add-to-cart');
+        const cartList = document.getElementById('cart-list');
+        const totalPriceElement = document.getElementById('total-price');
+
+        let cart = [];
+        let totalPrice = 0;
+
+        addToCartButton.addEventListener('click', () => {
+            const product = {
+                name: 'Product Name',
+                price: 100
+            };
+
+            cart.push(product);
+            totalPrice += product.price;
+
+            updateCartList();
+            updateTotalPrice();
+        });
+
+        function updateCartList() {
+            cartList.innerHTML = '';
+            cart.forEach((product, index) => {
+                const listItem = document.createElement('li');
+                listItem.textContent = `${product.name} - $${product.price}`;
+                cartList.appendChild(listItem);
+            });
+        }
+
+        function updateTotalPrice() {
+            totalPriceElement.textContent = `Total: $${totalPrice}`;
+        }
+      
+    </script>
+    <script src="{% static 'scripts.js' %}"></script>
+</body>
+
+</html>
+
+{% comment %} {% load static %}
+<link rel="stylesheet" href="{% static 'index1.css' %}">
+<script src="{% static 'scripts.js' %}"></script>
+<img src="{% static 'assets/maincata.jpg' %}" alt="Main Category Image"> {% endcomment %}
+{% comment %} <img src="{% static 'assets/m1.jpg' %}">
+<img src="{% static 'assets/m2.jpg' %}">
+<img src="{% static 'assets/m3.jpg' %}">  
+<img src="{% static 'assets/w1.jpg' %}">
+<img src="{% static 'assets/w2.jpg' %}">        
+<img src="{% static 'assets/w3.jpg' %}">
+<img src="{% static 'assets/about.webp' %}" alt="About Us Image">
+<img src="{% static 'assets/cart.jpg' %}" alt="Cart Image">
+<img src="{% static 'assets/w2.jpg' %}" alt="Cart Product Image">
+<img src="{% static 'assets/m2.jpg' %}" alt="Blog Product Image"> {% endcomment %}

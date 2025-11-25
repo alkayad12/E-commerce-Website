@@ -1,0 +1,357 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecommerce Website</title>
+    <link rel="stylesheet" href="{% static 'first.css' %}">
+    <script src="https://kit.fontawesome.com/f30fac2c61.js" crossorigin="anonymous"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Catamaran:wght@200&family=Courgette&family=Edu+TAS+Beginner:wght@700&family=Lato:wght@300;900&family=Mukta:wght@700&family=Mulish:wght@300&family=Open+Sans&family=PT+Sans:ital,wght@1,700&family=Poppins:wght@300&family=Raleway:wght@100&family=Roboto&family=Roboto+Condensed:wght@700&family=Roboto+Slab&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <nav>
+            <div class="logo">
+                <h1><b><i>AK</i></u></b></h1>
+                <!-- <img src="/assets12/logo.jpg"> -->
+            </div>
+            <ul>
+                <li>
+                    <a id="home" onclick="homes()">Home</a>
+                    <a id="shop" onclick="shops()">Shops</a>
+                    <a id="blog" onclick="blogs()">Blog</a>
+                    <a id="about" onclick="abouts()">About</a>
+                    <a id="contact" onclick="contacts()">Contact</a>
+                    <!-- <i class="fa-sharp fa-solid fa-cart-shopping"></i> -->
+
+                </li>
+            </ul>
+            <!-- <div>
+                <button>
+                    <ul>
+                        <li>
+                            <span>Login</span>
+                            <i class="fa-solid fa-angle-down"></i>
+                            <div class="sub-nav">
+                                <div class="col">
+                                    <a href="login.html">Login</a>
+                                    <a href="signup.html">Sign-in</a>
+                                    <a href="#">My Profile</a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </button>          
+            </div> -->
+            <div style="background-color: rgb(5, 167, 167) ;display:flex; justify-content:center;align-items:center;padding:4px;border-radius:10%;">
+                
+                  <a style="color:black; text-decoration: none;" href="{% url 'login' %}">login/</a>
+                  <a style="color:black; text-decoration:none" href="{% url 'signup' %}">signup</a>
+                      
+            </div>
+            <div class="icon">
+                <i class="fa-solid fa-magnifying-glass" href="search.html"></i>
+                <i class="fa-solid fa-heart"></i>
+
+                <i class="fa-solid fa-cart-shopping"></i>
+            </div>
+        </nav>
+
+        <!-- mainpage -->
+
+        <div class="main">
+            <div class="mainText">
+                <h2>AK....</h2>
+                <h1 class="top">Super Value Deals</h1>
+                <h1>On All Products</h1>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi</p>
+                <button><a href="https://www.limeroad.com"> Explore </a></button>
+            </div>
+            <img src="/static/asset/main1.webp" alt="">
+        </div>
+
+        <!-- cards -->
+
+        <div class="AK">
+            <div class="head">
+                <h1>AK <span>Men's Wear</span></h1>
+            </div>
+            <div class="card">
+                <div class="crd">
+                    <img src="/static/asset/men1.jpeg" alt="" >
+                    <div class="crdText">
+                        <h2>Cutton Trending Shirt's</h2>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i> <br>
+                        <button><a href="{% url 'addcart' %}">Add to Cart</a></button>
+                    </div>
+                </div>
+
+                <div class="crd">
+                    <img src="/static/asset/men2.jpeg" alt="" onclick="show(this)">
+                    <div class="crdText">
+                        <h2>Cutton Trending Shirt's</h2>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i> <br>
+                        <button><a href="{% url 'addcart' %}">Add to Cart</a></button>
+                    </div>
+                </div>
+                <div class="crd">
+                    <img src="/static/asset/men3.jpg" alt="" onclick="show(this)">
+                    <div class="crdText">
+                        <h2>Cutton Trending Shirt's</h2>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i> <br>
+                        <button><a href="{% url 'addcart' %}">Add to Cart</a></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Women Card -->
+
+        <div class="AK" id="trendSec">
+            <div class="head">
+                <h1>AK <span>Women's Wear</span></h1>
+            </div>
+            <div class="card">
+                <div class="crd">
+                    <img src="/static/asset/women1.jpg" alt="" onclick="show(this)">
+                    <div class="crdText">
+                        <h2>Trending Girl Top's</h2>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i> <br>
+                        <button><a href="{% url 'addcart' %}">Add to Cart</a></button>
+                        
+                    </div>
+                </div>
+
+                <div class="crd">
+                    <img src="/static/asset/women2.jpg" alt="" onclick="show(this)">
+                    <div class="crdText">
+                        <h2>Trending Girl Top's</h2>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i> <br>
+                        <button><a href="{% url 'addcart' %}">Add to Cart</a></button>
+                    </div>
+                </div>
+
+                <div class="crd">
+                    <img src="/static/asset/women3.jpeg" alt="" onclick="show(this)">
+                    <div class="crdText">
+                        <h2>Trending Girl Top's</h2>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i> <br>
+                        <button><a href="{% url 'addcart' %}">Add to Cart</a></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- about us -->
+
+        <div class="about">
+
+            <div class="aboutus">
+                <h1>#KnowUs</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+
+            <div class="me">
+                <img src="/static/asset/men2.jpeg" alt="">
+                <div class="aboutText">
+                    <h1>Who we are ?</h1>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing Dolorum corrupti consequuntur
+                        praesentium autem, officiis dignissimos assumenda saepe.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- contact -->
+
+        <div class="contact">
+
+            <div class="contactus">
+                <h1>#Let's Connect</h1>
+                <p>100% ORIGINAL guarantee for all products at AK.com</p>
+            </div>
+
+            <div class="contactMe">
+                <div class="contactText">
+                    <h1>Visit Our Office or Contact <br>
+                        Us Today</h1>
+                    <p>Address : Ramadevi Chauraha patel nagar</p>
+                    <p>Email : <i class="fa-solid fa-envelope"></i>&nbsp; alka@gmail.com, komal@gmail.com</p>
+                    <p>Number : <i class="fa-solid fa-phone"></i>&nbsp;+91 930513494</p>
+                    <p> alternate Number :<i class="fa-solid fa-phone"></i>&nbsp; +91 980756501</p>
+                </div>
+                <div>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3573.3701165554503!2d80.38418240950764!3d26.411530181355563!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399c413d6d4c2ad9%3A0x51d8569068c3e80b!2sRama%20Devi%20Chauraha%2C%20Jajmau%20Sub%20Metro%20City%2C%20Kanpur%2C%20Uttar%20Pradesh%20208007!5e0!3m2!1sen!2sin!4v1752475740572!5m2!1sen!2sin"
+                        style="border:0;height:100%;width:100%;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+
+            <div class="form">
+                <h1>Connect with Us. Fill Form</h1>
+                <input type="text" placeholder="Enter Name"> <br>
+                <input type="text" placeholder="Enter Phone no."> <br>
+                <input type="text" placeholder="Enter alternate Phone no."> <br>
+                <input type="text" placeholder="Enter Email"> <br>
+                <input type="text" placeholder="Enter Address"> <br>
+                <button>Submit</button>
+
+            </div>
+        </div>
+        <!-- cart -->
+
+        <div class="cart">
+            <img id="newImg" src="/static/asset/women2.jpg" alt="">
+            <div class="cartText">
+                <h1>Trends Offer : Trending Shop <br>
+                    Now</h1>
+                <h2>Special Price</h2>
+                <h2>$11</h2>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing.</p>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing.</p>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing.</p>
+                <div class="btn">
+                    <button><a href="{% url 'buynow' %}">Buy now</a></button>
+                    <button onclick="addCart()"><a href="{% url 'addcart' %}">Add to Cart</a></button>
+                     <button ><a href="{% url 'home' %}">Back</a></button>
+                </div> 
+               
+            </div>
+        </div>
+
+        <!-- blogs -->
+        <div class="AKs">
+            <div class="head">
+                <h1>AK <span>Trending Wear</span></h1>
+            </div>
+            <div class="card">
+                <div class="blog">
+                    <img src="/static/asset/women2.jpg" alt="">
+                    <div class="blogText">
+                        <h2>Trending Girls Cloths</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem, animi expedita?</p>
+                        <a href="https://www.ajio.com/shop/women">Read More</a>
+                    </div>
+                </div>
+
+                <div class="blog">
+                    <img src="/static/asset/men2.jpeg" alt="">
+                    <div class="blogText">
+                        <h2>Trending Boys Cloths</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem, animi expedita?</p>
+                        <a href="https://www.ajio.com/shop/men">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Letter -->
+
+        <div class="letter">
+            <div class="letterText">
+                <h1>Where to Deliver?</h1>
+                <p>Update delivery location and PIN code</p>
+            </div>
+            <div class="inp">
+                <input type="text" placeholder="Enter PIN">
+                <button>Sign Up</button>
+            </div>
+        </div>
+
+        <!-- Footer -->
+
+        <div class="footer">
+            <div class="footerText">
+                <h2>AK</h2>
+                <p><b><i>Service</i></b> :- Return within 14days of receiving your order </p>
+                <p>Customer</p>
+                <p>Satisfaction</p>
+                <p></p>
+
+            </div>
+            <div class="footerText">
+                <h2>Keep In Touch</h2>
+                <p><a href="https://whatsapp.com/dl/"><i class="fa-brands fa-whatsapp"></i></a>&nbsp; Whatsapp</p>
+                <p> <a href="https://www.instagram.com/harshu_baba_04?igsh=d3g2NDJzNmZ2N2l0"> <i
+                            class="fa-brands fa-instagram"></i></a>&nbsp; Instagram</p>
+                <p><a href="https://t.me/+919305134945 Alka Devi"><i
+                            class="fa-brands fa-telegram"></i></a>&nbsp;Telegram</p>
+                <p><a href="https://x.com/KomalG86408?t=Z-K_ETYnOVZSP4xqGvDMnQ&s=09"><i
+                            class="fa-brands fa-twitter"></i></a>&nbsp;Twitter</p>
+
+
+            </div>
+            <div class="footerText">
+                <h2>Customer Policies</h2>
+                <p>Terms Of Use</p>
+                <p>Track Orders</p>
+                <p>Shipping</p>
+                <p>Returns</p>
+
+            </div>
+            <div class="footerText">
+                <h2>Help Center</h2>
+                <div class="hc">
+                    <h3>Type of Issue</h3>
+                    <ul>
+                        <li> Help with your issues</li>
+                        <li>Help with your order</li>
+                    </ul>
+                    <h3>Help Topic</h3>
+                    <ul>
+                        <li>
+                            Delivery related
+                        </li>
+                        <li>
+                            login and my account
+                        </li>
+                        <li>
+                            Refunds related
+                        </li>
+                        <li>
+                            payment
+                        </li>
+                        <li>
+                            Return and pickup related
+                        </li>
+                    </ul>
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script src="{% static 'web.js' %}"></script>
+</body>
+
+</html>

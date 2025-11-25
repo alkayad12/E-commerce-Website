@@ -1,0 +1,145 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'index1.css' %} %}">
+    <title>Buy Now Form</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            width: 150vh;
+            margin: 50px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .product-info{
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 95%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+        }
+
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+        }
+
+        button[type="submit"] {
+            width: 100%;
+            height: 40px;
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #3e8e41;
+        }
+
+        #error-message {
+            color: red;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Buy Now</h1>
+        <div class="product-info">
+            <h2>Product Name</h2>
+            <p>Product Description</p>
+            <p>Price: $100</p>
+        </div>
+        <!-- <h1>Buy Now Form</h1> -->
+        <form id="buy-now-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="address">Address:</label>
+            <textarea id="address" name="address" required></textarea>
+            <label for="payment-method">Payment Method:</label>
+            <select id="payment-method" name="payment-method" required>
+                <option value="">Select Payment Method</option>
+                <option value="credit-card">Credit Card</option>
+                <option value="credit-card">Cash on Delivery</option>
+                <option value="credit-card">G-Pay</option>
+                <option value="credit-card">Payment</option>
+                <option value="paypal">PayPal</option>
+            </select>
+            <button type="submit">Buy Now</button>
+            <p id="error-message"></p>
+        </form>
+    </div>
+
+    <script>
+        const form = document.getElementById('buy-now-form');
+        const errorMessage = document.getElementById('error-message');
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const address = document.getElementById('address').value;
+            const paymentMethod = document.getElementById('payment-method').value;
+
+            // Validate form data
+            if (!name || !email || !address || !paymentMethod) {
+                errorMessage.textContent = 'Please fill out all fields';
+                return;
+            }
+
+            // Send data to server or handle form submission
+            console.log('Form submitted:', { name, email, address, paymentMethod });
+            // Reset form fields
+            form.reset();
+            errorMessage.textContent = '';
+        });
+
+    </script>
+    <script src="{% static 'scripts.js' %}"></script>
+</body>
+
+</html>
+
+{% comment %} {% load static %}
+<link rel="stylesheet" href="{% static 'index1.css' %}">
+<script src="{% static 'scripts.js' %}"></script>
+<img src="{% static 'assets/maincata.jpg' %}" alt="Main Category Image"> {% endcomment %}
+{% comment %} <img src="{% static 'assets/m1.jpg' %}">
+<img src="{% static 'assets/m2.jpg' %}">
+<img src="{% static 'assets/m3.jpg' %}">  
+<img src="{% static 'assets/w1.jpg' %}">
+<img src="{% static 'assets/w2.jpg' %}">        
+<img src="{% static 'assets/w3.jpg' %}">
+<img src="{% static 'assets/about.webp' %}" alt="About Us Image">
+<img src="{% static 'assets/cart.jpg' %}" alt="Cart Image">
+<img src="{% static 'assets/w2.jpg' %}" alt="Cart Product Image">
+<img src="{% static 'assets/m2.jpg' %}" alt="Blog Product Image"> {% endcomment %}

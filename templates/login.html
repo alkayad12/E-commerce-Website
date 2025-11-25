@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .register-link {
+            text-align: center;
+            margin-top: 18px;
+        }
+
+        .register-link a {
+            color: #ffc107;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1rem;
+            transition: color 0.2s;
+        }
+
+        .register-link a:hover {
+            color: #ff4081;
+        }
+
+        .mainheader {
+            background: #151c2c;
+            height: 75vh;
+            /* width: 350px; */
+            width: 75vh;
+            margin: 40px auto;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: none;
+            padding: 20px 30px;
+        }
+
+        .mainheader>h3 {
+            text-align: center;
+            color: #f3f3f3;
+            font-size: 2rem;
+            margin-bottom: 30px;
+            letter-spacing: 1px;
+        }
+
+        .login-form {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .form-group {
+            display: flex;
+            align-items: center;
+            background: none;
+            border: 2px solid #ffc107;
+            border-radius: 5px;
+            padding: 0 10px;
+        }
+
+        .form-group .icon {
+            color: #fff;
+            font-size: 1.2rem;
+            margin-right: 8px;
+        }
+
+        .form-group input {
+            background: none;
+            border: none;
+            outline: none;
+            color: #fff;
+            font-size: 1rem;
+            padding: 12px 0;
+            width: 100%;
+        }
+
+        .form-group input::placeholder {
+            color: #bdbdbd;
+        }
+
+        .login-btn {
+            background: none;
+            border: 2px solid #d500f9;
+            color: #ff4081;
+            font-weight: bold;
+            font-size: 1.1rem;
+            padding: 10px 0;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.2s, color 0.2s;
+        }
+
+        .login-btn:hover {
+            background: #d500f9;
+            color: #fff;
+        }
+
+        .options {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .remember-me {
+            color: #ffc107;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .remember-me input[type="checkbox"] {
+            accent-color: #ffc107;
+            margin-right: 5px;
+        }
+
+        .forgot {
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        .forgot:hover {
+            color: #ff4081;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="mainheader">
+        <h3>LOGIN FORM</h3>
+        <form class="login-form">
+            <div class="form-group">
+                <span class="icon">&#9993;</span>
+                <input type="email" id="email" name="email" placeholder="E-mail" required>
+            </div>
+            <div class="form-group">
+                <span class="icon">&#128274;</span>
+                <input type="password" id="password" name="password" placeholder="Password" required>
+            </div>
+            <button type="submit" class="login-btn">SUBMIT</button>
+            <div class="options">
+                <label class="remember-me">
+                    <input type="checkbox" name="remember">
+                    <span></span> Remember me
+                </label>
+                <a href="#" class="forgot">Forgot password?</a>
+            </div>
+        </form>
+        <div style="color:aliceblue" class="register-link">
+            <h3>Don't have an account ? <a href="#">Register</a></h3>
+        </div>
+    </div>
+</body>
+
+</html>
+
